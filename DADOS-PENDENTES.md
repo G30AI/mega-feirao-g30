@@ -4,32 +4,7 @@ Tudo nesta lista é **provisório**. A página marca cada dado de três formas, 
 discretas e sem tracejado (o botão no topo esconde as marcas para tirar print):
 
 | Classe | Onde se usa | Como aparece |
-| --- | --- | --- |
-| `mock` | bloco de texto | filete laranja na lateral esquerda |
-| `mock-inline` | um trecho no meio de uma frase | realce translúcido, como marca-texto |
-| `mock-box` | card ou seção inteira | etiqueta `exemplo` no canto, dentro do padding |
-
-**Regra:** ao substituir um dado real, remova a classe do elemento em `index.html`
-(ou do template em `assets/app.js`, quando o bloco é renderizado por JS).
-
-Quase tudo o que é volátil está no objeto `CONFIG`, no topo de
-**`assets/dados.js`** — mexer lá resolve datas, meta, lojas, links, cronograma,
-dias do evento, fases de tráfego e checklist de uma vez.
-
---- | --- | --- |
-| `mock` | bloco de texto alinhado à esquerda | barra laranja na lateral esquerda |
-| `mock-inline` | um trecho no meio de uma frase | sublinhado tracejado |
-| `mock-box` | card ou seção inteira | selo `exemplo` no canto, dentro do padding |
-
-**Regra:** ao substituir um dado real, remova a classe do elemento correspondente
-em `index.html`. Quando esta lista zerar, `grep -c 'mock' index.html` deve devolver
-só as linhas do CSS e do botão.
-
-A maior parte dos dados voláteis está centralizada no objeto `CONFIG`, no topo do
-`<script>` de `index.html` — mexer lá resolve o cronograma, as fases de tráfego, o
-checklist, os dias do evento, a meta e os links.
-
----
+| ---
 
 ## 1. Evento — `CONFIG.evento` (assets/dados.js)
 
@@ -37,7 +12,7 @@ checklist, os dias do evento, a meta e os links.
 | --- | --- | --- |
 | `edicao` | `3º Mega Feirão G30` | É a 3ª edição? O anterior foi o 2º. |
 | ~~`datasCurto` / `datasLongo`~~ | **`22, 23 e 24 de outubro`** | ✅ **Confirmado pelo marketing em 24/09.** Cai quinta, sexta e sábado de 2026 — confere com um feirão de três dias. |
-| `ano` | `2026` | Provável: 22 a 24/10 só cai quinta–sábado em 2026. Confirmar mesmo assim. |
+| `ano` | `2026` | Provável: 22 a 24/10 só cai quinta–sábado em 2026. **O contador regressivo do hero depende disso** — se o ano estiver errado, ele mostra um número absurdo. Confirmar. |
 | `parceiro` | `Banco Santander` | **Provavelmente correto** — os criativos 03 e 05 dizem "em parceria com o banco Santander". Confirmar se o nome aparece assim. |
 | `lojas` | `200` | Quantas lojas nesta edição? |
 | `meta` | `17` | Meta do painel de resultados. O anterior era 17 carros. |
@@ -57,9 +32,13 @@ responsáveis (Guga, Wirley, Carol, Daniel) precisam ser confirmados.
 
 ## 4. Dias do evento — `CONFIG.dias` (assets/dados.js)
 
-`24 quinta / 25 sexta / 26 sábado`. Depende da resposta sobre as datas.
-**Atenção:** 24/10/2026 cai num sábado, não numa quinta. Os rótulos de dia da
-semana estão errados de propósito até a data fechar.
+✅ **Resolvido.** `22 quinta / 23 sexta / 24 sábado`, conferido no calendário de 2026.
+
+## 4b. Contador regressivo — `CONFIG.evento.inicioISO` / `fimISO`
+
+Aponta para a **Live de abertura, 22/10/2026 às 19h30** (horário de Brasília,
+fixado por offset `-03:00` para não depender do fuso de quem abre a página) e
+encerra no fim do dia 24. Confirmar o horário da Live e o ano.
 
 ## 5. Fases de tráfego — `CONFIG.fases` (assets/dados.js)
 

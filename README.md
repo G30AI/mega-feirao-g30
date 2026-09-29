@@ -107,6 +107,7 @@ ffmpeg -ss 1 -i saida.mp4 -frames:v 1 -vf "scale=480:-1" -q:v 5 posters/saida.jp
 | Quero mudar | Onde |
 | --- | --- |
 | Datas, meta, links, cronograma, fases, checklist | `CONFIG`, em `assets/dados.js` |
+| Alvo do contador regressivo | `CONFIG.evento.inicioISO` / `fimISO` (offset de Brasília fixo) |
 | Roteiros dos criativos e qual vídeo cada um usa | `CRIATIVOS`, em `assets/dados.js` |
 | Os cases das edições passadas | `CASES`, em `assets/dados.js` |
 | Prompts do Gideão, objeções, mensagens MAPA | `GIDEAO`, `OBJECOES`, `MENSAGENS` |

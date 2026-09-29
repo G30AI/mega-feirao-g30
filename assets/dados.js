@@ -16,6 +16,10 @@ const CONFIG = {
     datasLongo: '22, 23 e 24 de outubro',
     datasCurto: '22, 23 e 24<br>de outubro',
     ano:        2026,
+    // alvo do contador: Live de abertura. Offset fixo de Brasília para não
+    // depender do fuso de quem abre a página.
+    inicioISO:  '2026-10-22T19:30:00-03:00',
+    fimISO:     '2026-10-24T23:59:59-03:00',
     parceiro:   'Santander Financiamentos',   // provável: citado nos criativos 03 e 05
     lojas:      200,
     meta:       17
@@ -57,6 +61,7 @@ const CONFIG = {
   fases: [
     { periodo: '09 a 17/Out',    fase: 'Captação',   cor: 'blue',   acao: 'Autoridade e pré-aprovação', detalhe: 'Campanhas focadas em pré-aprovação com o Santander. Gerar listas mostrando que quem se antecipa garante as melhores taxas.' },
     { periodo: '18 a 21/Out',    fase: 'Agenda VIP', cor: 'purple', acao: 'Antecipação e escassez',     detalhe: 'Remarketing agressivo. Mostrar bastidores e veículos sendo preparados. Convidar forte para a lista VIP da Live.' },
+    { periodo: '18 a 21/Out',    fase: 'Otimização', cor: 'warn',   acao: 'Otimização das campanhas',   detalhe: 'Ler os números diários e ajustar: pausar criativo com CPL alto, reforçar orçamento no que performa e refinar público. É a janela de correção antes da Live — depois dela não há tempo de ajustar.' },
     { periodo: '22/Out, 19h30',  fase: 'Abertura',   cor: 'brand',  acao: 'Live de ofertas',            detalhe: 'Aviso massivo para a base de leads. Revelação das condições Santander e G30 Pay. Fluxo total para o atendimento por IA.' },
     { periodo: '23 e 24/Out',    fase: 'Fechamento', cor: 'red',    acao: 'Urgência real',              detalhe: 'Pausar campanhas frias. Orçamento em remarketing com veículos sendo entregues. Gatilho: últimas unidades.' }
   ]

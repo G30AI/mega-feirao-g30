@@ -49,6 +49,18 @@
       <h1 class="display hero__title">Prepare-se para bater<br>todos os recordes de<br><span class="accent">vendas</span></h1>
       <p class="lead hero__lead">Sua loja já está inscrita no <span class="mock-inline strong">3º Mega Feirão G30</span>. Aqui está tudo para preparar a operação: os roteiros, o cronograma, o tráfego e os scripts de venda.</p>
 
+      <!-- contador regressivo: preenchido por app.js, nasce oculto para não piscar 00 -->
+      <div class="countdown mock-box" id="countdown" hidden>
+        <p class="eyebrow eyebrow--brand" id="cdLabel">Faltam para a abertura</p>
+        <div class="countdown__grid" id="cdGrid" aria-hidden="true">
+          <div class="countdown__cell"><span class="countdown__n" id="cdD">--</span><span class="countdown__u">dias</span></div>
+          <div class="countdown__cell"><span class="countdown__n" id="cdH">--</span><span class="countdown__u">horas</span></div>
+          <div class="countdown__cell"><span class="countdown__n" id="cdM">--</span><span class="countdown__u">min</span></div>
+          <div class="countdown__cell"><span class="countdown__n" id="cdS">--</span><span class="countdown__u">seg</span></div>
+        </div>
+        <p class="sm countdown__when" id="cdWhen"></p>
+      </div>
+
       <div class="hero__meta">
         <span class="chip chip--brand mock-inline" id="heroDates">24, 25 e 26 de outubro</span>
         <span class="chip mock-inline" id="heroStores">200 lojas</span>

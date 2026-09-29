@@ -54,6 +54,65 @@ function paintKpi() {
   el('salesDone').hidden = vendas < meta;
 }
 
+/* ============================ contador regressivo ============================ */
+/* Três estados: antes da Live, durante os três dias, e depois. O tique só roda
+   enquanto a aba está visível — em segundo plano não há o que atualizar.      */
+let tique = null;
+
+function iniciaContador() {
+  const box = el('countdown');
+  const inicio = new Date(CONFIG.evento.inicioISO);
+  const fim = new Date(CONFIG.evento.fimISO);
+
+  if (isNaN(inicio) || isNaN(fim)) { box.remove(); return; }  // data inválida: some em vez de mentir
+
+  box.hidden = false;
+  pintaContador(inicio, fim);
+
+  const liga = () => { if (!tique) tique = setInterval(() => pintaContador(inicio, fim), 1000); };
+  const desliga = () => { clearInterval(tique); tique = null; };
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { desliga(); } else { pintaContador(inicio, fim); liga(); }
+  });
+  liga();
+}
+
+function pintaContador(inicio, fim) {
+  const box = el('countdown');
+  const agora = Date.now();
+  const doisDigitos = (n) => String(n).padStart(2, '0');
+
+  if (agora >= fim) {                       // acabou
+    box.classList.remove('is-live');
+    box.classList.add('is-over');
+    el('cdLabel').textContent = 'Encerrado';
+    el('cdWhen').textContent = 'O ' + CONFIG.evento.edicao + ' aconteceu em ' + CONFIG.evento.datasLongo + '. Os materiais continuam aqui.';
+    clearInterval(tique); tique = null;
+    return;
+  }
+
+  const acontecendo = agora >= inicio;
+  const alvo = acontecendo ? fim : inicio;
+  box.classList.toggle('is-live', acontecendo);
+
+  el('cdLabel').textContent = acontecendo ? 'O Mega Feirão está acontecendo' : 'Faltam para a abertura';
+  el('cdWhen').textContent = acontecendo
+    ? 'Encerra no fim do sábado, dia 24. Aproveite cada hora.'
+    : 'Live de abertura em ' + CONFIG.evento.datasLongo.split(',')[0] + ' de outubro, às 19h30.';
+
+  let resta = Math.floor((alvo - agora) / 1000);
+  const dias = Math.floor(resta / 86400); resta -= dias * 86400;
+  const horas = Math.floor(resta / 3600);  resta -= horas * 3600;
+  const min = Math.floor(resta / 60);
+  const seg = resta - min * 60;
+
+  el('cdD').textContent = doisDigitos(dias);
+  el('cdH').textContent = doisDigitos(horas);
+  el('cdM').textContent = doisDigitos(min);
+  el('cdS').textContent = doisDigitos(seg);
+}
+
 /* ============================ checklist ============================ */
 function renderChecklist() {
   el('checklist').innerHTML = CONFIG.checklist.map((item, i) => `
@@ -290,6 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
   el('ctaSuporte').href        = CONFIG.links.suporte;
 
   renderNav();
+  iniciaContador();
   renderChecklist();
   renderCriativos();
   renderCases();
