@@ -124,10 +124,18 @@ function renderEventDays() {
 }
 
 /* ============================ checklist ============================ */
+/* A marcação é guardada pelo TEXTO do item, não pela posição: assim, tirar ou
+   reordenar um item da lista não desloca o que a loja já tinha marcado.        */
+function idDoItem(texto) {
+  let h = 5381;
+  for (let i = 0; i < texto.length; i++) h = ((h << 5) + h + texto.charCodeAt(i)) | 0;
+  return 'i' + (h >>> 0).toString(36);
+}
+
 function renderChecklist() {
-  el('checklist').innerHTML = CONFIG.checklist.map((item, i) => `
+  el('checklist').innerHTML = CONFIG.checklist.map((item) => `
     <label class="check">
-      <input type="checkbox" data-check="${i}" onchange="saveChecklist()">
+      <input type="checkbox" data-check="${idDoItem(item)}" onchange="saveChecklist()">
       <span class="check__box">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
       </span>
@@ -135,8 +143,8 @@ function renderChecklist() {
     </label>`).join('');
 
   try {
-    JSON.parse(store.get('checklist', '[]')).forEach((i) => {
-      const box = document.querySelector(`[data-check="${i}"]`);
+    JSON.parse(store.get('checklist', '[]')).forEach((id) => {
+      const box = document.querySelector(`[data-check="${id}"]`);
       if (box) box.checked = true;
     });
   } catch { /* nada salvo */ }

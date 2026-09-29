@@ -67,8 +67,9 @@ minha, ancoradas nos marcos reais. Confirmar com quem toca o tráfego.
 
 ## 6. Checklist de preparação — `CONFIG.checklist` (assets/dados.js)
 
-Os 6 primeiros itens são os do 2º Feirão. O 7º ("Os 6 criativos gravados e
-publicados") foi acrescentado por fazer sentido com este plano. Confirmar a lista.
+Cinco dos seis itens vieram do 2º Feirão. O último ("Os seis criativos gravados
+e publicados") foi acrescentado por fazer sentido com este plano. O item da
+G30 Pay saiu em 29/09, a pedido. Confirmar a lista com o marketing.
 
 ## 7. A oferta — **removida da página** ✅
 

@@ -38,7 +38,6 @@ const CONFIG = {
     'Presença de toda a equipa nos treinamentos.',
     'Copiloto Gideão ativo durante todo o feirão.',
     'Camisa e boné Mega Feirão G30 para os vendedores.',
-    'G30 Pay ativada, se a loja quiser parcelar a entrada.',
     'Os seis criativos gravados e publicados.'
   ],
 
