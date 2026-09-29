@@ -10,8 +10,8 @@ não tem seção de venda nem formulário.
 
 Sete abas: O Feirão, Criativos, Cases, Calendário, Tráfego, Execução e Pré-vendas.
 
-> ⚠️ **Alguns dados ainda são de exemplo** — meta do painel, número de lojas,
-> cronograma e links. A página não os marca mais visualmente (as marcas saíram
+> ⚠️ **Alguns dados ainda são de exemplo** — meta do painel, número de lojas e
+> links. O cronograma e as datas do evento já vieram do marketing. A página não os marca mais visualmente (as marcas saíram
 > quando o conteúdo foi aprovado), então o registro vive só em
 > [DADOS-PENDENTES.md](DADOS-PENDENTES.md).
 

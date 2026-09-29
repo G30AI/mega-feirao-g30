@@ -365,10 +365,14 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 /* ---- os três dias do evento, em destaque dentro do contador ---- */
-.eventdays {
+.eventdays__title {
   margin-top: var(--sp-5);
   padding-top: var(--sp-5);
   border-top: 1px solid var(--line);
+  color: var(--txt-2);
+}
+.eventdays {
+  margin-top: var(--sp-4);
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -483,15 +487,16 @@ table { border-collapse: collapse; width: 100%; }
 
 /* ===================== cronograma ===================== */
 .slot { display: flex; align-items: center; gap: var(--sp-5); padding: var(--sp-5) var(--sp-6); }
-.slot__when { flex-shrink: 0; width: 92px; }
-.slot__time { font-size: var(--fs-xs); font-weight: 800; color: var(--brand); }
-.slot__date { font-size: var(--fs-micro); font-weight: 700; letter-spacing: var(--tr-wide); text-transform: uppercase; color: var(--txt-3); margin-top: 2px; }
+.slot__when { flex-shrink: 0; width: 116px; }
+.slot__date { font-size: var(--fs-h4); font-weight: 800; color: var(--brand); letter-spacing: -.01em; }
+.slot__week { font-size: var(--fs-micro); font-weight: 700; letter-spacing: var(--tr-wide); text-transform: uppercase; color: var(--txt-3); margin-top: 3px; }
+.slot__time { font-size: var(--fs-xs); font-weight: 600; color: var(--txt-2); margin-top: var(--sp-2); }
 .slot__rule { width: 1px; align-self: stretch; background: var(--line); flex-shrink: 0; }
 @media (max-width: 620px) {
   .slot { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
   .slot__rule { display: none; }
-  .slot__when { width: auto; display: flex; align-items: baseline; gap: var(--sp-3); }
-  .slot__date { margin-top: 0; }
+  .slot__when { width: auto; display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; }
+  .slot__week, .slot__time { margin-top: 0; }
 }
 
 .day { text-align: center; padding-block: var(--sp-6); }

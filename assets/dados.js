@@ -18,9 +18,12 @@ const CONFIG = {
     ano:        2026,
     // alvo do contador: Live de abertura. Offset fixo de Brasília para não
     // depender do fuso de quem abre a página.
-    inicioISO:  '2026-10-22T19:30:00-03:00',
+    inicioISO:  '2026-10-22T00:00:00-03:00',
     fimISO:     '2026-10-24T23:59:59-03:00',
     parceiro:   'Santander Financiamentos',   // provável: citado nos criativos 03 e 05
+    // a LIVE deixou de ser a abertura: acontece na véspera, 21/Out das 10h às 12h
+    liveTexto:  'Antes dele, a LIVE na quarta, dia 21, das 10h às 12h.',
+    subtitulo:  'Mega Feirão & Black Friday Antecipada',
     lojas:      200,
     meta:       17
   },
@@ -39,16 +42,23 @@ const CONFIG = {
     'Os seis criativos gravados e publicados.'
   ],
 
+  /* Confirmado pelo marketing em 29/09/2026. Os dias da semana foram conferidos
+     no calendário de 2026 e batem todos. As descrições abaixo é que são minhas. */
   cronograma: [
-    { hora: '18:30h',     data: '05/Out',      titulo: 'Planejamento (Guga)',                 desc: 'Definição de metas, alinhamento de processos e kick-off oficial da operação.' },
-    { hora: '11:00h',     data: '07/Out',      titulo: 'Criação de conteúdos',                desc: 'Com Carol e Daniel. Produzir as provas sociais e os vídeos seguindo os seis roteiros.' },
-    { hora: '10:00h',     data: '09/Out',      titulo: 'Tráfego e captação de leads',         desc: 'Com Wirley. Lançamento das campanhas no Meta Ads. Foco em encher a lista.' },
-    { hora: '10:00h',     data: '12/Out',      titulo: 'Gestão de equipe e preparação',       desc: 'Com Guga. Alinhamento e preparação dedicada aos gestores.' },
-    { hora: '08:00h',     data: '14/Out',      titulo: 'Sessão extra de análise de tráfego',  desc: 'Otimização geral: tudo sobre tráfego pago para o lançamento.' },
-    { hora: '08:00h',     data: '15/Out',      titulo: 'Análise de criativos e campanhas',    desc: 'Otimização fina: manter o que performa e ajustar rotas no tráfego.' },
-    { hora: '19:30h',     data: '19/Out',      titulo: 'Treinamento de lives',                desc: 'Capacitação para o evento. Como conduzir a audiência e converter.' },
-    { hora: 'Foco total', data: '20 e 21/Out', titulo: 'Sala de guerra',                      desc: 'Operação máxima antes da Live. Estratégia e alinhamento final.' },
-    { hora: '19:30h',     data: '22/Out',      titulo: 'Live oficial G30',                    desc: 'A revelação das ofertas para a base aquecida. Abertura do Feirão.' }
+    { hora: '09h',        data: '02/Out', semana: 'Sexta-feira',  titulo: 'Alinhamento estratégico presencial',
+      desc: 'Encontro presencial para fechar a estratégia do Feirão com a equipe.' },
+    { hora: '',           data: '05/Out', semana: 'Segunda-feira', titulo: 'Criação de conteúdo',
+      desc: 'Produção das provas sociais e dos vídeos, seguindo os seis roteiros da aba Criativos.' },
+    { hora: '',           data: '07/Out', semana: 'Quarta-feira',  titulo: 'Plantão de tráfego: primeiras campanhas',
+      desc: 'Subida das primeiras campanhas no Meta Ads.' },
+    { hora: '',           data: '14/Out', semana: 'Quarta-feira',  titulo: 'Plantão de tráfego: análise',
+      desc: 'Leitura dos números e ajuste de rota: pausar o que não performa, reforçar o que traz lead barato.' },
+    { hora: '10h às 11h', data: '19/Out', semana: 'Segunda-feira', titulo: 'Treinamento de LIVE',
+      desc: 'Capacitação para conduzir a transmissão e converter a audiência.' },
+    { hora: '10h às 12h', data: '20/Out', semana: 'Terça-feira',   titulo: 'Sala de guerra',
+      desc: 'Alinhamento final da operação, na véspera da LIVE.' },
+    { hora: '10h às 12h', data: '21/Out', semana: 'Quarta-feira',  titulo: 'LIVE',
+      desc: 'Transmissão oficial. Revelação das ofertas para a base aquecida.' }
   ],
 
   dias: [
@@ -59,11 +69,11 @@ const CONFIG = {
 
   /* a lógica das 4 fases é real (hub do 2º Feirão); só os períodos são provisórios */
   fases: [
-    { periodo: '09 a 17/Out',    fase: 'Captação',   cor: 'blue',   acao: 'Autoridade e pré-aprovação', detalhe: 'Campanhas focadas em pré-aprovação com o Santander. Gerar listas mostrando que quem se antecipa garante as melhores taxas.' },
+    { periodo: '07 a 17/Out',    fase: 'Captação',   cor: 'blue',   acao: 'Autoridade e pré-aprovação', detalhe: 'Campanhas focadas em pré-aprovação com o Santander. Gerar listas mostrando que quem se antecipa garante as melhores taxas.' },
     { periodo: '18 a 21/Out',    fase: 'Agenda VIP', cor: 'purple', acao: 'Antecipação e escassez',     detalhe: 'Remarketing agressivo. Mostrar bastidores e veículos sendo preparados. Convidar forte para a lista VIP da Live.' },
     { periodo: '18 a 21/Out',    fase: 'Otimização', cor: 'warn',   acao: 'Otimização das campanhas',   detalhe: 'Ler os números diários e ajustar: pausar criativo com CPL alto, reforçar orçamento no que performa e refinar público. É a janela de correção antes da Live — depois dela não há tempo de ajustar.' },
-    { periodo: '22/Out, 19h30',  fase: 'Abertura',   cor: 'brand',  acao: 'Live de ofertas',            detalhe: 'Aviso massivo para a base de leads. Revelação das condições Santander e G30 Pay. Fluxo total para o atendimento por IA.' },
-    { periodo: '23 e 24/Out',    fase: 'Fechamento', cor: 'red',    acao: 'Urgência real',              detalhe: 'Pausar campanhas frias. Orçamento em remarketing com veículos sendo entregues. Gatilho: últimas unidades.' }
+    { periodo: '21/Out, 10h',    fase: 'LIVE',       cor: 'brand',  acao: 'Live de ofertas',            detalhe: 'Aviso massivo para a base de leads. Revelação das condições Santander e G30 Pay. Fluxo total para o atendimento por IA.' },
+    { periodo: '22 a 24/Out',    fase: 'Feirão',     cor: 'red',    acao: 'Urgência real',              detalhe: 'Pausar campanhas frias. Orçamento em remarketing com veículos sendo entregues. Gatilho: últimas unidades.' }
   ]
 };
 

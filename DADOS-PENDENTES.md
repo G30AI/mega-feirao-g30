@@ -32,11 +32,14 @@ dias do evento, fases de tráfego e checklist de uma vez.
 | `inscricao` | `forms.gle/zGzhtkD9Szuy1rwm8` | Formulário do **2º Feirão**. Tem um novo? |
 | `suporteWhats` | `wa.me/551931671538` | Suporte do 2º Feirão — `(19) 3199-1730`. Continua? |
 
-## 3. Cronograma — `CONFIG.cronograma` (assets/dados.js)
+## 3. Cronograma — ✅ **confirmado**
 
-Os **9 marcos inteiros** são os do 2º Feirão, com o mesmo espaçamento de dias,
-reancorados para fechar na Live de abertura em **22/Out**. Datas, horários e
-responsáveis (Guga, Wirley, Carol, Daniel) precisam ser confirmados.
+Os 7 marcos vieram do marketing em 29/09/2026 e os dias da semana foram
+conferidos no calendário — batem todos. O que continua meu são as **descrições**
+de cada item, escritas a partir do título; valem uma lida.
+
+Dois itens não têm horário informado (05/Out e os dois plantões de tráfego). O
+card simplesmente não mostra hora nesses casos, em vez de inventar uma.
 
 ## 4. Dias do evento — `CONFIG.dias` (assets/dados.js)
 
@@ -44,15 +47,23 @@ responsáveis (Guga, Wirley, Carol, Daniel) precisam ser confirmados.
 
 ## 4b. Contador regressivo — `CONFIG.evento.inicioISO` / `fimISO`
 
-Aponta para a **Live de abertura, 22/10/2026 às 19h30** (horário de Brasília,
-fixado por offset `-03:00` para não depender do fuso de quem abre a página) e
-encerra no fim do dia 24. Confirmar o horário da Live e o ano.
+Aponta para o **início do Mega Feirão, 22/10** (offset `-03:00` fixo, para não
+depender do fuso de quem abre a página) e encerra no fim do dia 24.
 
-## 5. Fases de tráfego — `CONFIG.fases` (assets/dados.js)
+Antes apontava para "a Live de abertura, 22/Out às 19h30". Com o cronograma
+real, **a LIVE é na véspera — 21/Out, das 10h às 12h** — e deixou de ser a
+abertura. O contador agora conta para o Feirão e cita a LIVE na linha de baixo.
+Como o dia 22 não tem hora de início definida, uso o começo do dia; se houver
+um horário de abertura, é só trocar em `inicioISO`.
 
-A **lógica das 4 fases** (Captação → Agenda VIP → Abertura → Fechamento) é real,
-veio do hub do 2º Feirão. Os **períodos** foram reancorados para 22–24/Out, mas
-as janelas exatas continuam provisórias.
+## 5. Fases de tráfego — parcialmente resolvido
+
+A **lógica das 4 fases** é real (hub do 2º Feirão) e a linha da **LIVE agora bate
+com o cronograma**: 21/Out às 10h, não mais 22/Out às 19h30. A Captação passou a
+começar em 07/Out, dia em que as primeiras campanhas sobem.
+
+As **janelas de Captação, Agenda VIP e Otimização** continuam sendo estimativa
+minha, ancoradas nos marcos reais. Confirmar com quem toca o tráfego.
 
 ## 6. Checklist de preparação — `CONFIG.checklist` (assets/dados.js)
 

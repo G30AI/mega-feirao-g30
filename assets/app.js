@@ -96,10 +96,10 @@ function pintaContador(inicio, fim) {
   const alvo = acontecendo ? fim : inicio;
   box.classList.toggle('is-live', acontecendo);
 
-  el('cdLabel').textContent = acontecendo ? 'O Mega Feirão está acontecendo' : 'Faltam para a abertura';
+  el('cdLabel').textContent = acontecendo ? 'O Mega Feirão está acontecendo' : 'Faltam para o Mega Feirão';
   el('cdWhen').textContent = acontecendo
     ? 'Encerra no fim do sábado, dia 24. Aproveite cada hora.'
-    : 'Live de abertura em ' + CONFIG.evento.datasLongo.split(',')[0] + ' de outubro, às 19h30.';
+    : CONFIG.evento.liveTexto;
 
   let resta = Math.floor((alvo - agora) / 1000);
   const dias = Math.floor(resta / 86400); resta -= dias * 86400;
@@ -115,6 +115,7 @@ function pintaContador(inicio, fim) {
 
 /* ============================ os três dias, em destaque ============================ */
 function renderEventDays() {
+  el('eventDaysTitle').textContent = CONFIG.evento.subtitulo;
   el('eventDays').innerHTML = CONFIG.dias.map((d) => `
     <div class="eventday">
       <span class="eventday__n">${esc(d.dia)}</span>
@@ -222,8 +223,9 @@ function renderCronograma() {
   el('cronograma').innerHTML = CONFIG.cronograma.map((e) => `
     <div class="card slot">
       <div class="slot__when">
-        <p class="slot__time">${esc(e.hora)}</p>
         <p class="slot__date">${esc(e.data)}</p>
+        <p class="slot__week">${esc(e.semana)}</p>
+        ${e.hora ? `<p class="slot__time">${esc(e.hora)}</p>` : ''}
       </div>
       <span class="slot__rule"></span>
       <div>
