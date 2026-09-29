@@ -1,10 +1,18 @@
 # Dados pendentes
 
-Tudo nesta lista é **provisório**. A página marca cada dado de três formas, todas
-discretas e sem tracejado (o botão no topo esconde as marcas para tirar print):
+O conteúdo foi aprovado pelo marketing, então **a página não marca mais nada
+visualmente** — o aviso do topo, o botão de ocultar marcas e os realces laranja
+saíram em 29/09. Este arquivo passou a ser o **único registro** do que ainda é
+provisório.
 
-| Classe | Onde se usa | Como aparece |
-| ---
+Quase tudo o que é volátil está no objeto `CONFIG`, no topo de
+**`assets/dados.js`** — mexer lá resolve datas, meta, lojas, links, cronograma,
+dias do evento, fases de tráfego e checklist de uma vez.
+
+> Sem as marcas na tela, nada denuncia um valor provisório para quem abre a
+> página. Vale conferir esta lista antes de mostrar o site a alguém de fora.
+
+---
 
 ## 1. Evento — `CONFIG.evento` (assets/dados.js)
 

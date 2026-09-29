@@ -113,6 +113,15 @@ function pintaContador(inicio, fim) {
   el('cdS').textContent = doisDigitos(seg);
 }
 
+/* ============================ os três dias, em destaque ============================ */
+function renderEventDays() {
+  el('eventDays').innerHTML = CONFIG.dias.map((d) => `
+    <div class="eventday">
+      <span class="eventday__n">${esc(d.dia)}</span>
+      <span class="eventday__w">${esc(d.label.replace('-feira', ''))}</span>
+    </div>`).join('');
+}
+
 /* ============================ checklist ============================ */
 function renderChecklist() {
   el('checklist').innerHTML = CONFIG.checklist.map((item, i) => `
@@ -211,7 +220,7 @@ function renderCases() {
 /* ============================ calendário ============================ */
 function renderCronograma() {
   el('cronograma').innerHTML = CONFIG.cronograma.map((e) => `
-    <div class="card slot mock">
+    <div class="card slot">
       <div class="slot__when">
         <p class="slot__time">${esc(e.hora)}</p>
         <p class="slot__date">${esc(e.data)}</p>
@@ -224,7 +233,7 @@ function renderCronograma() {
     </div>`).join('');
 
   el('dias').innerHTML = CONFIG.dias.map((d) => `
-    <div class="card day mock-box">
+    <div class="card day">
       <p class="day__n">${esc(d.dia)}</p>
       <p class="day__label">${esc(d.label)}</p>
       <p class="eyebrow day__note">${esc(d.nota)}</p>
@@ -330,18 +339,10 @@ function fallback(text, done) {
   ta.remove();
 }
 
-/* ============================ marcas de dado provisório ============================ */
-function toggleMockMarks() {
-  const off = document.body.classList.toggle('mock-off');
-  el('mockToggle').textContent = off ? 'mostrar marcas' : 'ocultar marcas';
-  store.set('mockOff', off ? '1' : '0');
-}
-
 /* ============================ boot ============================ */
 document.addEventListener('DOMContentLoaded', () => {
   // o que vem do CONFIG e aparece em HTML estático
   el('salesGoal').textContent  = CONFIG.evento.meta;
-  el('heroDates').textContent  = CONFIG.evento.datasLongo;
   el('heroStores').textContent = CONFIG.evento.lojas + ' lojas';
   el('heroPartner').textContent = 'com ' + CONFIG.evento.parceiro;
   el('factDates').innerHTML    = CONFIG.evento.datasCurto;
@@ -350,6 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderNav();
   iniciaContador();
+  renderEventDays();
   renderChecklist();
   renderCriativos();
   renderCases();
@@ -361,7 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderMensagens();
 
   vendas = parseInt(store.get('vendas', '0'), 10) || 0;
-  if (store.get('mockOff', '0') === '1') toggleMockMarks();
   paintKpi();
 
   switchTab((location.hash || '#main').slice(1), { silent: true });

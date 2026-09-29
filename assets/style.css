@@ -243,62 +243,6 @@ table { border-collapse: collapse; width: 100%; }
 .tag--red    { background: rgba(248,81,73,.12);   border-color: rgba(248,81,73,.35);   color: var(--crit); }
 .tag--warn   { background: rgba(210,153,34,.12);  border-color: rgba(210,153,34,.38);  color: var(--warn); }
 
-/* ===================== marcação de dado provisório =====================
-   Sem tracejado. Três formas discretas:
-     .mock        bloco  — filete sólido na lateral
-     .mock-inline trecho — realce translúcido, como marca-texto
-     .mock-box    seção  — etiqueta no canto, dentro do padding
-   ===================================================================== */
-.mock {
-  border-left: 2px solid var(--brand-line);
-  padding-left: var(--sp-4);
-}
-.mock-inline {
-  background: var(--brand-soft);
-  box-shadow: 0 0 0 1px var(--brand-line) inset;
-  border-radius: 5px;
-  padding: .08em .34em;
-  margin-inline: -.06em;
-}
-.mock-box { position: relative; }
-.mock-box::after {
-  content: 'exemplo';
-  position: absolute; top: var(--sp-3); right: var(--sp-3);
-  font-size: 9px; font-weight: 800; letter-spacing: var(--tr-wide); text-transform: uppercase;
-  color: var(--brand-lift); background: var(--brand-soft);
-  border: 1px solid var(--brand-line); border-radius: var(--r-sm);
-  padding: .15rem .45rem; pointer-events: none; z-index: 3;
-}
-
-.chip.mock-inline {
-  background: var(--brand-soft);
-  box-shadow: none;
-  border-color: var(--brand-line);
-  color: var(--brand-lift);
-  padding: .35rem .7rem;
-  margin: 0;
-}
-.btn.mock-inline { box-shadow: none; background: var(--surface-2); padding: .8rem 1.35rem; margin: 0; border-color: var(--brand-line); }
-
-body.mock-off .mock { border-left-color: transparent; padding-left: 0; }
-body.mock-off .mock-inline { background: none; box-shadow: none; padding: 0; margin: 0; }
-body.mock-off .mock-box::after { display: none; }
-
-/* ===================== aviso do topo ===================== */
-.notice {
-  background: var(--brand); color: #0a0a0a;
-  font-size: var(--fs-xs); font-weight: 700;
-  padding: .55rem var(--sp-5);
-  display: flex; align-items: center; justify-content: center; gap: var(--sp-4); flex-wrap: wrap;
-  text-align: center;
-}
-.notice code { background: rgba(0,0,0,.18); padding: .1rem .35rem; border-radius: 4px; font-size: .95em; }
-.notice button {
-  font-size: 10px; font-weight: 800; letter-spacing: var(--tr-wide); text-transform: uppercase;
-  background: rgba(0,0,0,.22); padding: .2rem .55rem; border-radius: var(--r-sm); transition: background .15s;
-}
-.notice button:hover { background: rgba(0,0,0,.38); }
-
 /* ===================== cabeçalho ===================== */
 .header {
   position: sticky; top: 0; z-index: 50;
@@ -420,6 +364,39 @@ body.mock-off .mock-box::after { display: none; }
   .countdown__grid { gap: var(--sp-2); }
 }
 
+/* ---- os três dias do evento, em destaque dentro do contador ---- */
+.eventdays {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--sp-6);
+}
+.eventday { display: flex; flex-direction: column; align-items: center; gap: var(--sp-1); }
+.eventday + .eventday { border-left: 1px solid var(--line); padding-left: var(--sp-6); }
+.eventday__n {
+  font-size: clamp(1.7rem, 4.4vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.04em;
+  color: var(--txt);
+}
+.eventday__w {
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: var(--tr-wide);
+  text-transform: uppercase;
+  color: var(--txt-3);
+}
+.countdown.is-over .eventdays { border-top-color: transparent; }
+
+@media (max-width: 480px) {
+  .eventdays { gap: var(--sp-4); }
+  .eventday + .eventday { padding-left: var(--sp-4); }
+}
+
 /* ===================== painel de metas ===================== */
 .kpi { text-align: center; }
 .kpi__figures { display: flex; align-items: baseline; justify-content: center; gap: .4rem; margin-block: var(--sp-5) var(--sp-2); }
@@ -505,7 +482,7 @@ body.mock-off .mock-box::after { display: none; }
 }
 
 /* ===================== cronograma ===================== */
-.slot { display: flex; align-items: center; gap: var(--sp-5); }
+.slot { display: flex; align-items: center; gap: var(--sp-5); padding: var(--sp-5) var(--sp-6); }
 .slot__when { flex-shrink: 0; width: 92px; }
 .slot__time { font-size: var(--fs-xs); font-weight: 800; color: var(--brand); }
 .slot__date { font-size: var(--fs-micro); font-weight: 700; letter-spacing: var(--tr-wide); text-transform: uppercase; color: var(--txt-3); margin-top: 2px; }

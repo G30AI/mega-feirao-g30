@@ -10,8 +10,9 @@ não tem seção de venda nem formulário.
 
 Sete abas: O Feirão, Criativos, Cases, Calendário, Tráfego, Execução e Pré-vendas.
 
-> ⚠️ **Versão de trabalho.** Datas, metas, links e cronograma são dados de
-> exemplo, marcados na página com um selo laranja. Veja
+> ⚠️ **Alguns dados ainda são de exemplo** — meta do painel, número de lojas,
+> cronograma e links. A página não os marca mais visualmente (as marcas saíram
+> quando o conteúdo foi aprovado), então o registro vive só em
 > [DADOS-PENDENTES.md](DADOS-PENDENTES.md).
 
 ## Como rodar
@@ -108,6 +109,7 @@ ffmpeg -ss 1 -i saida.mp4 -frames:v 1 -vf "scale=480:-1" -q:v 5 posters/saida.jp
 | --- | --- |
 | Datas, meta, links, cronograma, fases, checklist | `CONFIG`, em `assets/dados.js` |
 | Alvo do contador regressivo | `CONFIG.evento.inicioISO` / `fimISO` (offset de Brasília fixo) |
+| Os três dias em destaque no hero | `CONFIG.dias` — os mesmos que alimentam o Calendário |
 | Roteiros dos criativos e qual vídeo cada um usa | `CRIATIVOS`, em `assets/dados.js` |
 | Os cases das edições passadas | `CASES`, em `assets/dados.js` |
 | Prompts do Gideão, objeções, mensagens MAPA | `GIDEAO`, `OBJECOES`, `MENSAGENS` |

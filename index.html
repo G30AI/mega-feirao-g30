@@ -20,12 +20,6 @@
 </head>
 <body>
 
-<!-- ============================ aviso de conteúdo provisório ============================ -->
-<div class="notice">
-  <span>Versão de trabalho — datas, metas, links e cronograma são dados de exemplo. Veja <code>DADOS-PENDENTES.md</code>.</span>
-  <button onclick="toggleMockMarks()" id="mockToggle">ocultar marcas</button>
-</div>
-
 <!-- ============================ cabeçalho ============================ -->
 <header class="header">
   <div class="header__bar">
@@ -47,10 +41,10 @@
 
     <section class="hero wrap">
       <h1 class="display hero__title">Prepare-se para bater<br>todos os recordes de<br><span class="accent">vendas</span></h1>
-      <p class="lead hero__lead">Sua loja já está inscrita no <span class="mock-inline strong">3º Mega Feirão G30</span>. Aqui está tudo para preparar a operação: os roteiros, o cronograma, o tráfego e os scripts de venda.</p>
+      <p class="lead hero__lead">Sua loja já está inscrita no <span class=" strong">3º Mega Feirão G30</span>. Aqui está tudo para preparar a operação: os roteiros, o cronograma, o tráfego e os scripts de venda.</p>
 
       <!-- contador regressivo: preenchido por app.js, nasce oculto para não piscar 00 -->
-      <div class="countdown mock-box" id="countdown" hidden>
+      <div class="countdown" id="countdown" hidden>
         <p class="eyebrow eyebrow--brand" id="cdLabel">Faltam para a abertura</p>
         <div class="countdown__grid" id="cdGrid" aria-hidden="true">
           <div class="countdown__cell"><span class="countdown__n" id="cdD">--</span><span class="countdown__u">dias</span></div>
@@ -59,12 +53,13 @@
           <div class="countdown__cell"><span class="countdown__n" id="cdS">--</span><span class="countdown__u">seg</span></div>
         </div>
         <p class="sm countdown__when" id="cdWhen"></p>
+
+        <div class="eventdays" id="eventDays"></div>
       </div>
 
       <div class="hero__meta">
-        <span class="chip chip--brand mock-inline" id="heroDates">24, 25 e 26 de outubro</span>
-        <span class="chip mock-inline" id="heroStores">200 lojas</span>
-        <span class="chip mock-inline" id="heroPartner">com Santander Financiamentos</span>
+        <span class="chip" id="heroStores">200 lojas</span>
+        <span class="chip" id="heroPartner">com Santander Financiamentos</span>
       </div>
 
       <div class="row row--center mt-6">
@@ -87,7 +82,7 @@
         <div class="kpi__figures">
           <span class="kpi__now num" id="salesNow">0</span>
           <span class="kpi__sep">/</span>
-          <span class="kpi__goal num mock-inline" id="salesGoal">17</span>
+          <span class="kpi__goal num" id="salesGoal">17</span>
         </div>
         <p class="eyebrow">veículos vendidos</p>
 
@@ -104,17 +99,17 @@
     <!-- fatos -->
     <section class="section wrap">
       <div class="grid grid--3">
-        <div class="card fact mock-box">
+        <div class="card fact">
           <p class="fact__icon">🎯</p>
           <p class="eyebrow">O desafio</p>
           <p class="fact__value">Vender de 20% a 30%<br>do estoque em 3 dias</p>
         </div>
-        <div class="card fact mock-box">
+        <div class="card fact">
           <p class="fact__icon">📅</p>
           <p class="eyebrow">Quando</p>
-          <p class="fact__value" id="factDates">24, 25 e 26<br>de outubro</p>
+          <p class="fact__value" id="factDates">22, 23 e 24<br>de outubro</p>
         </div>
-        <div class="card fact mock-box">
+        <div class="card fact">
           <p class="fact__icon">🏆</p>
           <p class="eyebrow">Pra quem</p>
           <p class="fact__value" id="factStores">Exclusivo para<br>200 lojas G30</p>
@@ -129,7 +124,7 @@
         <h2 class="h1">Checklist de preparação</h2>
         <p class="lead">Tudo o que precisa estar pronto na sua loja antes da Live de abertura.</p>
       </div>
-      <div class="card card--pad mock-box" id="checklist"></div>
+      <div class="card card--pad" id="checklist"></div>
     </section>
 
     <!-- Gideão -->
@@ -265,7 +260,7 @@
     </section>
 
     <section class="section wrap">
-      <div class="card card--pad mock-box">
+      <div class="card card--pad">
         <div class="table-scroll">
           <table class="table">
             <thead>
@@ -430,7 +425,7 @@
       <img src="assets/g30-logo.png" alt="G30">
       <p class="eyebrow">Inteligência automotiva</p>
     </div>
-    <a id="ctaSuporte" href="#" target="_blank" rel="noopener" class="btn btn--ghost mock-inline">Suporte G30</a>
+    <a id="ctaSuporte" href="#" target="_blank" rel="noopener" class="btn btn--ghost">Suporte G30</a>
   </div>
 </footer>
 
