@@ -229,7 +229,7 @@ function renderCases() {
 /* ============================ calendário ============================ */
 function renderCronograma() {
   el('cronograma').innerHTML = CONFIG.cronograma.map((e) => `
-    <div class="card slot">
+    <div class="card slot${e.destaque ? ' slot--destaque' : ''}">
       <div class="slot__when">
         <p class="slot__date">${esc(e.data)}</p>
         <p class="slot__week">${esc(e.semana)}</p>
@@ -238,7 +238,8 @@ function renderCronograma() {
       <span class="slot__rule"></span>
       <div>
         <h4 class="h4">${esc(e.titulo)}</h4>
-        <p class="sm mt-3">${esc(e.desc)}</p>
+        ${e.desc ? `<p class="sm mt-3">${esc(e.desc)}</p>` : ''}
+        ${e.local ? `<p class="xs slot__local">📍 ${esc(e.local)}</p>` : ''}
       </div>
     </div>`).join('');
 

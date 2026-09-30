@@ -492,6 +492,11 @@ table { border-collapse: collapse; width: 100%; }
 .slot__week { font-size: var(--fs-micro); font-weight: 700; letter-spacing: var(--tr-wide); text-transform: uppercase; color: var(--txt-3); margin-top: 3px; }
 .slot__time { font-size: var(--fs-xs); font-weight: 600; color: var(--txt-2); margin-top: var(--sp-2); }
 .slot__rule { width: 1px; align-self: stretch; background: var(--line); flex-shrink: 0; }
+.slot__local { margin-top: var(--sp-3); color: var(--txt-2); }
+
+/* A LIVE e o marco que puxa todo o resto: ganha a borda da marca. */
+.slot--destaque { border-color: var(--brand-line); }
+.slot--destaque .slot__time { color: var(--brand); font-weight: 800; }
 @media (max-width: 620px) {
   .slot { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
   .slot__rule { display: none; }
@@ -503,6 +508,9 @@ table { border-collapse: collapse; width: 100%; }
 .day__n { font-size: clamp(2.6rem, 7vw, 3.6rem); font-weight: 900; line-height: 1; color: var(--brand); letter-spacing: -.04em; }
 .day__label { margin-top: var(--sp-3); font-size: var(--fs-h4); font-weight: 700; }
 .day__note { margin-top: var(--sp-1); }
+
+/* A arte da agenda e vertical (9:16): sem limite ela ocupa a tela inteira. */
+.agenda { max-width: 420px; margin-inline: auto; display: block; }
 
 /* ===================== tabela de fases ===================== */
 .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); }

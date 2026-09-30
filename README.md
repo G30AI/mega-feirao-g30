@@ -39,6 +39,7 @@ assets/
   dados.js                   TODO o conteúdo (CONFIG, criativos, prompts, scripts)
   app.js                     render e comportamento
   g30-logo.png               logo oficial da plataforma (frontend/web)
+  agenda-mega-feirao.jpg     arte oficial da agenda (aba Calendário)
   infografico-plano-criativos.jpg
   plano-criativos-mega-feirao-g30.pdf
 videos/                      17 vídeos em H.264 com faststart (128 MB)
@@ -110,6 +111,7 @@ ffmpeg -ss 1 -i saida.mp4 -frames:v 1 -vf "scale=480:-1" -q:v 5 posters/saida.jp
 | Datas, meta, links, cronograma, fases, checklist | `CONFIG`, em `assets/dados.js` |
 | Alvo do contador regressivo | `CONFIG.evento.inicioISO` / `fimISO` (offset de Brasília fixo) |
 | Os três dias em destaque no hero | `CONFIG.dias` — os mesmos que alimentam o Calendário |
+| Um marco do cronograma (hora, local, destaque) | `CONFIG.cronograma` — `desc` e `local` são opcionais |
 | Roteiros dos criativos e qual vídeo cada um usa | `CRIATIVOS`, em `assets/dados.js` |
 | Os cases das edições passadas | `CASES`, em `assets/dados.js` |
 | Prompts do Gideão, objeções, mensagens MAPA | `GIDEAO`, `OBJECOES`, `MENSAGENS` |

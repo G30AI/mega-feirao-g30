@@ -32,14 +32,19 @@ dias do evento, fases de tráfego e checklist de uma vez.
 | `inscricao` | `forms.gle/zGzhtkD9Szuy1rwm8` | Formulário do **2º Feirão**. Tem um novo? |
 | `suporteWhats` | `wa.me/551931671538` | Suporte do 2º Feirão — `(19) 3199-1730`. Continua? |
 
-## 3. Cronograma — ✅ **confirmado**
+## 3. Cronograma — ✅ **oficial**
 
-Os 7 marcos vieram do marketing em 29/09/2026 e os dias da semana foram
-conferidos no calendário — batem todos. O que continua meu são as **descrições**
-de cada item, escritas a partir do título; valem uma lida.
+Veio da arte **"Agenda Mega Feirão — Outubro 2026"**, recebida em 30/09/2026.
+Datas, horários, local e descrições saem de lá — **as descrições deixaram de ser
+minhas**. Os dias da semana foram conferidos no calendário e batem todos.
 
-Dois itens não têm horário informado (05/Out e os dois plantões de tráfego). O
-card simplesmente não mostra hora nesses casos, em vez de inventar uma.
+A arte está publicada em `assets/agenda-mega-feirao.jpg` e aparece no fim da aba
+Calendário, com botão de baixar.
+
+Mudou em relação à versão de 29/09: o alinhamento passou para **09h30** e ganhou
+local (**Vinhedo/SP**); o segundo plantão de tráfego saiu de 14 para **15/Out**;
+a **LIVE foi de 21/Out 10h–12h para 21/Out às 19h**; e o dia 21 passou a ter
+**dois** compromissos (Sala de guerra às 10h e a LIVE às 19h).
 
 ## 4. Dias do evento — `CONFIG.dias` (assets/dados.js)
 
@@ -58,9 +63,9 @@ um horário de abertura, é só trocar em `inicioISO`.
 
 ## 5. Fases de tráfego — parcialmente resolvido
 
-A **lógica das 4 fases** é real (hub do 2º Feirão) e a linha da **LIVE agora bate
-com o cronograma**: 21/Out às 10h, não mais 22/Out às 19h30. A Captação passou a
-começar em 07/Out, dia em que as primeiras campanhas sobem.
+A **lógica das 4 fases** é real (hub do 2º Feirão) e a linha da LIVE acompanha o
+cronograma oficial: **21/Out às 19h**. A Captação começa em 07/Out, dia em que as
+primeiras campanhas sobem.
 
 As **janelas de Captação, Agenda VIP e Otimização** continuam sendo estimativa
 minha, ancoradas nos marcos reais. Confirmar com quem toca o tráfego.
