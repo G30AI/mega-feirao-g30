@@ -157,8 +157,7 @@ const CRIATIVOS = [
       ['11–15s', 'Mostrar a preparação do espaço e os veículos sendo posicionados.'],
       ['15–18s', '“Mega Feirão G30. Vem.”']
     ],
-    // PENDENTE: a Goiânia Veículos não entregou a versão de carro deste criativo.
-    videos: { moto: 'criativo-06-ultima-chance', carro: null }
+    videos: { moto: 'criativo-06-ultima-chance', carro: 'loja-06-ultima-chance' }
   }
 ];
 

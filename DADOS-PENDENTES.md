@@ -92,12 +92,10 @@ se valem para a loja ou para o cliente final:
 - *"até dez mil reais de desconto"* (criativo 03)
 - *"até 100%"* — provavelmente financiamento (criativo 03)
 
-## 8. Vídeo faltando
+## 8. Vídeos — ✅ **completos**
 
-O **criativo 06 (Última chance)** só tem a versão de **moto**. A Goiânia Veículos
-entregou 5 dos 6. A aba desabilita o botão "🚗 Carro" nesse card e mostra o aviso.
-Se a versão existir, converta e salve como `videos/loja-06-ultima-chance.mp4`
-(+ poster) e troque `carro: null` por `carro: 'loja-06-ultima-chance'` em `CRIATIVOS`, em `assets/dados.js`.
+Os **12 vídeos de criativo** estão no ar: os 6 roteiros nas duas versões, moto
+e carro. A versão de carro do criativo 06 chegou em 30/09 e foi ligada.
 
 ---
 
@@ -109,7 +107,7 @@ Não mexer sem motivo — é material real:
 - **Execução prática** (6 pontos), **AIDA**, **regra de ouro** → PDF, pág. 2 e 9
 - **Roteiro estruturado**, **orientações de gravação**, **regras de retenção** → infográfico
 - **30 prompts do Gideão**, **3 objeções**, **4 pilares MAPA**, **10 mensagens MAPA** → hub do 2º Feirão
-- Os **11 vídeos de criativo** em `videos/` → Suzuki Moto Marques (motos) e Goiânia Veículos (carros)
+- Os **12 vídeos de criativo** em `videos/` → Suzuki Moto Marques (motos) e Goiânia Veículos (carros)
 - Os **6 cases** (`videos/case-*.mp4`) → lojas das edições passadas. Os títulos e os
   textos de "o que observar" fui eu que escrevi, a partir do que se vê em cada vídeo —
   **confira com o marketing** se a leitura está certa e se alguma loja precisa de crédito

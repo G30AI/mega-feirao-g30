@@ -42,7 +42,7 @@ assets/
   agenda-mega-feirao.jpg     arte oficial da agenda (aba Calendário)
   infografico-plano-criativos.jpg
   plano-criativos-mega-feirao-g30.pdf
-videos/                      17 vídeos em H.264 com faststart (128 MB)
+videos/                      18 vídeos em H.264 com faststart (142 MB)
   criativo-* / loja-*        os 6 criativos, nas versões de moto e de carro
   case-*                     6 cases das edições passadas
   posters/                   capa de cada vídeo
@@ -88,9 +88,14 @@ fonte já comprimida degradaria à toa. Também aí havia uma duplicata exata.
 
 São **dois conjuntos paralelos**: o mesmo plano de 6 criativos executado por duas
 lojas — **Suzuki Moto Marques** (motos) e **Goiânia Veículos** (carros). A aba
-*Criativos* mostra os dois lado a lado, com um alternador por card.
+*Criativos* mostra os dois lado a lado, com um alternador por card. Os doze
+estão completos.
 
-Falta a versão de carro do criativo 06.
+O criativo 06 de carro veio em 4K a **120 fps**, com 288 MB. Além da escala, a
+conversão precisou de `fps=30` — sem isso o arquivo publicado carregaria quatro
+vezes mais quadros do que qualquer navegador vai mostrar. Por ser cena de
+confete, que é o pior caso para o compressor, usei CRF 28 em vez de 26: 14 MB
+em vez de 18, sem diferença visível num quadro comparado lado a lado.
 
 ### Reconverter um vídeo
 
