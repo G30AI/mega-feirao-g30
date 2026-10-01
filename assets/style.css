@@ -485,6 +485,18 @@ table { border-collapse: collapse; width: 100%; }
   .case__body { padding: var(--sp-4); }
 }
 
+/* ===================== criativos prontos para baixar ===================== */
+.pronto { display: flex; flex-direction: column; }
+.pronto__video { width: 100%; aspect-ratio: 9 / 16; background: #000; object-fit: cover; }
+.pronto__body { padding: var(--sp-5); display: flex; flex-direction: column; flex: 1; }
+.pronto__top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--sp-3); }
+.pronto__top .h3 { flex: 1; }
+.pronto__label { margin-top: var(--sp-5); margin-bottom: var(--sp-2); }
+/* o botao fica no pe do cartao: os dois alinham mesmo com textos de alturas diferentes */
+.pronto__acao { margin-top: auto; padding-top: var(--sp-5); }
+
+@media (max-width: 620px) { .pronto__body { padding: var(--sp-4); } }
+
 /* ===================== cronograma ===================== */
 .slot { display: flex; align-items: center; gap: var(--sp-5); padding: var(--sp-5) var(--sp-6); }
 .slot__when { flex-shrink: 0; width: 116px; }

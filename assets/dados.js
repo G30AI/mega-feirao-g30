@@ -161,6 +161,26 @@ const CRIATIVOS = [
   }
 ];
 
+/* ---------------------------------------------------------------------
+   Criativos prontos, para a loja baixar e publicar como seus.
+   Gravados pelo Misael sem citar nome de loja nenhum, justamente para
+   servirem a qualquer uma — inclusive às que não produzem vídeo.
+   Ficam em 1080x1920, a resolução que o Instagram usa: aqui o arquivo é
+   publicado de novo pela loja, e não só assistido nesta página.
+   --------------------------------------------------------------------- */
+const PRONTOS = [
+  {
+    slug: 'mega-feirao-g30-motos', titulo: 'Convite — motos', duracao: '29s',
+    resumo: 'Apresentador numa loja de motos, com as datas do Feirão na tela. Sem nome de loja, sem oferta específica.',
+    usar: 'Publique como está e ponha o endereço e o contato da sua loja na legenda ou no story.'
+  },
+  {
+    slug: 'mega-feirao-g30-carros', titulo: 'Convite — carros', duracao: '38s',
+    resumo: 'Mesmo formato, em loja de carros, falando de taxa e condição. Também sem identificar a loja.',
+    usar: 'Vale para o feed e para o story. Se for ao story, lembre de marcar o perfil da loja.'
+  }
+];
+
 const LOJAS = { moto: 'Suzuki Moto Marques', carro: 'Goiânia Veículos' };
 
 const RETENCAO = [

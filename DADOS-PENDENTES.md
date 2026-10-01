@@ -94,8 +94,17 @@ se valem para a loja ou para o cliente final:
 
 ## 8. Vídeos — ✅ **completos**
 
-Os **12 vídeos de criativo** estão no ar: os 6 roteiros nas duas versões, moto
-e carro. A versão de carro do criativo 06 chegou em 30/09 e foi ligada.
+Os **12 vídeos de criativo** estão no ar: os 6 roteiros nas duas versões, moto e
+carro. A versão de carro do criativo 06 chegou em 30/09 e foi ligada.
+
+Mais **2 criativos prontos para a loja baixar e publicar** (`PRONTOS`, em
+`assets/dados.js`), gravados pelo Misael sem citar nome de loja. Esses ficam em
+1080×1920, e não em 720×1280 como os de referência: a loja republica o arquivo,
+então vale manter a resolução que o Instagram usa.
+
+**Uma coisa para o marketing conferir:** no de carros, a moldura da placa de um
+dos veículos ao fundo traz o nome de uma loja. O apresentador não cita loja
+nenhuma, como combinado, mas a marca aparece no cenário.
 
 ---
 

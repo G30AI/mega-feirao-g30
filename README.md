@@ -42,12 +42,14 @@ assets/
   agenda-mega-feirao.jpg     arte oficial da agenda (aba Calendário)
   infografico-plano-criativos.jpg
   plano-criativos-mega-feirao-g30.pdf
-videos/                      18 vídeos em H.264 com faststart (142 MB)
+videos/                      20 vídeos em H.264 com faststart (178 MB)
   criativo-* / loja-*        os 6 criativos, nas versões de moto e de carro
   case-*                     6 cases das edições passadas
+  mega-feirao-g30-*          2 criativos prontos, para a loja baixar (1080x1920)
   posters/                   capa de cada vídeo
 materiais-apoio/                 originais em HEVC dos criativos — fora do git
 materiais-mega-feirao-passado/   originais dos cases — fora do git
+materiais-prontos/               originais dos criativos prontos — fora do git
 ```
 
 Sem framework e sem build. A única dependência externa é a fonte Inter, do Google
@@ -119,6 +121,7 @@ ffmpeg -ss 1 -i saida.mp4 -frames:v 1 -vf "scale=480:-1" -q:v 5 posters/saida.jp
 | Um marco do cronograma (hora, local, destaque) | `CONFIG.cronograma` — `desc` e `local` são opcionais |
 | Roteiros dos criativos e qual vídeo cada um usa | `CRIATIVOS`, em `assets/dados.js` |
 | Os cases das edições passadas | `CASES`, em `assets/dados.js` |
+| Os criativos prontos para baixar | `PRONTOS`, em `assets/dados.js` |
 | Prompts do Gideão, objeções, mensagens MAPA | `GIDEAO`, `OBJECOES`, `MENSAGENS` |
 | Nomes e ordem das abas | `ABAS`, em `assets/dados.js` |
 | Cor, espaçamento, tipografia | tokens no `:root` de `assets/style.css` |

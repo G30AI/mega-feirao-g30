@@ -226,6 +226,27 @@ function renderCases() {
     </article>`).join('');
 }
 
+/* ============================ criativos prontos ============================ */
+function renderProntos() {
+  el('listaProntos').innerHTML = PRONTOS.map((c) => `
+    <article class="card card--flush card--hover pronto">
+      <video class="pronto__video" controls playsinline preload="none"
+             poster="videos/posters/${esc(c.slug)}.jpg" src="videos/${esc(c.slug)}.mp4"></video>
+      <div class="pronto__body">
+        <div class="pronto__top">
+          <h3 class="h3">${esc(c.titulo)}</h3>
+          <span class="chip">${esc(c.duracao)}</span>
+        </div>
+        <p class="sm mt-3">${esc(c.resumo)}</p>
+        <p class="eyebrow eyebrow--brand pronto__label">Como usar</p>
+        <p class="sm">${esc(c.usar)}</p>
+        <div class="pronto__acao">
+          <a class="btn btn--primary" href="videos/${esc(c.slug)}.mp4" download>Baixar o vídeo</a>
+        </div>
+      </div>
+    </article>`).join('');
+}
+
 /* ============================ calendário ============================ */
 function renderCronograma() {
   el('cronograma').innerHTML = CONFIG.cronograma.map((e) => `
@@ -366,6 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderChecklist();
   renderCriativos();
   renderCases();
+  renderProntos();
   renderCronograma();
   renderFases();
   renderRetencao();
